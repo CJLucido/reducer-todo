@@ -14,7 +14,7 @@ function SomeForm(props){
                 
                 </input>
             
-                <button>Submit Todo</button>
+                <button onClick={props.handleSubmit}>Submit Todo</button>
             
             
             </form>

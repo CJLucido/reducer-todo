@@ -11,7 +11,7 @@ import { appReducer, initialState } from "../../reducers/reducer"
 
 
 function SomeList() {
-    const [state, dispatch] = useReducer(appReducer, initialState)
+    const [state, dispatch] = useReducer(appReducer, [initialState])
     const [nameState, setNameState] = useState('Input todo here')
 
     const checkCompleted = () => {
@@ -22,10 +22,27 @@ function SomeList() {
         setNameState(e.target.value)
     }
 
+    const handleSubmit = e => {
+        dispatch({type: "CREATE_TODO", payload: {name: nameState,
+        id: Date.now(), 
+        completed: false}})
+      
+    }
+
+console.log(state)
   return (
     <div >
-        <h2>{state.item}</h2>
-        <SomeForm handleNewNameState={handleNewNameState} nameState={nameState}/>
+       
+        
+{
+        //somestate.map
+    state.map(todo => (
+    <SomeCard key={todo.id} completed={todo.completed} name={todo.item}/>
+    
+    )
+            )
+    }
+        <SomeForm handleSubmit={handleSubmit} handleNewNameState={handleNewNameState} nameState={nameState}/>
     </div>
   );
 }
