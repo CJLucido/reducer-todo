@@ -5,7 +5,7 @@ import SomeCard from "../molecules/SomeCard"
 import SomeMap from "../molecules/SomeMap"
 
 //reducers
-import appReducer, { initialState } from "./reducers/reducer"
+import {appReducer,  initialState } from "../../reducers/reducer"
 
 
 function SomeList() {
@@ -13,11 +13,11 @@ function SomeList() {
 
   return (
     <div >
-        {
-            //somestate.map
-            () =>{ <SomeCard/>}
+        
+           
+            <SomeCard/>
 
-        }
+        
     </div>
   );
 }

@@ -1,6 +1,6 @@
 
 
-function appReducer(state, action){
+export const appReducer = (state, action)=>{
     switch (action.type){
         case "COMPLETED":
             return {...state, completed: true}
@@ -19,5 +19,3 @@ export const initialState = {
     completed: false,
     id: 3892987589
 }
-
-export default appReducer;

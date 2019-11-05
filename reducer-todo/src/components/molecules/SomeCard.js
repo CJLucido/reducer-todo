@@ -4,9 +4,7 @@ import React from 'react';
 function SomeCard() {
   return (
     <div >
-       {
-           //some properties
-       }
+     <h1>Hello</h1>
     </div>
   );
 }
