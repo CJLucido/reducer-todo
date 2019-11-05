@@ -1,10 +1,13 @@
 import React from 'react';
 
 
-function SomeCard() {
+function SomeCard(props) {
   return (
     <div >
-     <h1>Hello</h1>
+     
+    <h2>{props.name}</h2>
+    
+
     </div>
   );
 }

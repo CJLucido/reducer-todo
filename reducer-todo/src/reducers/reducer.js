@@ -1,6 +1,6 @@
 
 
-export const appReducer = (state, action)=>{
+export function appReducer(state, action){
     switch (action.type){
         case "COMPLETED":
             return {...state, completed: true}
