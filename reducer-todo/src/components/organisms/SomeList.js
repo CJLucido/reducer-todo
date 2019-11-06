@@ -40,7 +40,9 @@ function SomeList() {
         dispatch({type: "COMPLETED", payload: id})
     }
   
-   
+    const handleDestroy = () => {
+        dispatch({type: "DESTROY"})
+    }
 //console.log(state)
 
   return (
@@ -55,7 +57,7 @@ function SomeList() {
             )
             
     }
-        <SomeForm  handleSubmit={handleSubmit} handleNewNameState={handleNewNameState} nameState={nameState}/>
+        <SomeForm handleDestroy={handleDestroy} handleSubmit={handleSubmit} handleNewNameState={handleNewNameState} nameState={nameState}/>
     </div>
   );
 }

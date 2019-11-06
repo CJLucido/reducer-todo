@@ -7,7 +7,6 @@ export function appReducer(state, action){
         case "COMPLETED":
         let newArray =  state.map(item => {
                if(item.id === action.payload ){
-                  console.log(item.completed)
                     item.completed = !item.completed
                }
                return item
@@ -17,7 +16,11 @@ export function appReducer(state, action){
         case "CREATE_TODO":
        
          return [...state, action.payload];
-
+        case "DESTROY":
+            let slimmedTodos = state.filter(item => {
+                return item.completed === false
+            })
+            return slimmedTodos
            
         default:
             throw new Error("No action matched!");
