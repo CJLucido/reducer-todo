@@ -5,13 +5,18 @@ export function appReducer(state, action){
     
     switch (action.type){
         case "COMPLETED":
-            return {...state, completed: true}
+        let newArray =  state.map(item => {
+               if(item.id === action.payload ){
+                  console.log(item.completed)
+                    item.completed = !item.completed
+               }
+               return item
+            })
+            return newArray
 
         case "CREATE_TODO":
-            let newState = [Object.assign({}, state)]
-            newState = [...state, action.payload]
-            return newState
-           // return [...state, payload];
+       
+         return [...state, action.payload];
 
            
         default:
